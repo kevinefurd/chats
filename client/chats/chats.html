@@ -1,0 +1,16 @@
+<template name="Chats">
+    <div class="container">
+        <h1>Chats</h1>
+        
+        	{{> quickForm collection="Chats" id="addChatForm" type="insert" class="new-chat-form" }}
+            <table class="table">
+            {{#each chat in chats }}
+                <tr>
+                    <td>{{chat.author}}</td>
+                    <td>{{chat.text}}</td>
+                    <td>{{chat.createdAt}}</td>
+                </tr>
+            {{/each}}
+            </table>
+    </div>
+</template>
