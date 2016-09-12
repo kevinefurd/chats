@@ -1,14 +1,24 @@
 <template name="Chats">
     <div class="container">
         <h1> <fa class="fa fa-trash"></fa>  Chats</h1>
-        
+        <!--
         	{{> quickForm collection="Chats" id="addChatForm" type="insert" class="new-chat-form" }}
+            -->
+            
+            <form class='send-chat'>
+                <input type="text" name="handle" placeHolder="Enter a handle" />
+                <input type="text" name="text" placeholder="Type to add new tasks" />
+                <button class='btn'><fa class='fa fa-pencil' ></fa>Send</button>
+        	</form>
+        	
             <table class="table">
             {{#each chat in chats }}
                 <tr>
-                    <td>{{chat.author}}</td>
+                    <td>{{chat.handle}}</td>
                     <td>{{chat.text}}</td>
-                    <td>{{chat.createdAt}}</td>
+                    <td>{{chat.author}}<br>
+                        {{formatDate chat.createdAt}}</td>
+
                 </tr>
             {{/each}}
             </table>

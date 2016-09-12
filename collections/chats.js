@@ -16,6 +16,11 @@ Chatschema = new SimpleSchema({
 		type: String,
 		label: "Text"
 	},
+	handle: {
+		type: String,
+		label: "Handle"
+	},
+		
 	/*
 	ingredients: { 
 		type: [Ingredient]
