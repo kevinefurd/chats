@@ -54,19 +54,5 @@ Chatschema = new SimpleSchema({
 
 });
 
-/*
-Meteor.methods({
-	toggleMenuItem: function(id, curState) {
-		Chats.update(id, {
-			$set: {
-				inMenu: !curState
-			}
-		});
-	},
-	deleteRecipe: function(id) {
-		Chats.remove(id);
-	}
-})
-*/
 
 Chats.attachSchema(Chatschema);
