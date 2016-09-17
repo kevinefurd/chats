@@ -1,19 +1,25 @@
 <template name="Chats">
     <div class="panel panel-default">
         <div class='panel panel-heading'>
-            <h1> <fa class="fa fa-trash"></fa>Chats</h1>
+            <h1>
+                <span class="glyphicon glyphicon-trash"></span>
+                Chats
+                </h1>
         </div>
         <div class='panel-body'>
             <!--
         	{{> quickForm collection="Chats" id="addChatForm" type="insert" class="new-chat-form" }}
             -->
+            {{ #if currentUser }}
+                <form class='send-chat'>
+                    <input type="text" name="handle" placeHolder="Enter a handle" />
+                    <input type="text" name="text" placeholder="Type to add new tasks" />
+                    <button class='btn'><fa class='fa fa-pencil' ></fa>Send</button>
+            	</form>
+            {{ else }}
+                <p>login to chat.</p>
+            {{ /if }}
             
-            <form class='send-chat'>
-                <input type="text" name="handle" placeHolder="Enter a handle" />
-                <input type="text" name="text" placeholder="Type to add new tasks" />
-                <button class='btn'><fa class='fa fa-pencil' ></fa>Send</button>
-        	</form>
-        	
             <table class="table">
             {{#each chat in chats }}
                 <tr>

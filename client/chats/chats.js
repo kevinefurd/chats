@@ -15,7 +15,7 @@ Template.Chats.helpers({
 	},
 	formatDate: function(date) {
 		return moment(date).format('HH.mm:ss YYYY.MM.DD');
-	}
+	},
 });
 
 Template.Chats.events({
